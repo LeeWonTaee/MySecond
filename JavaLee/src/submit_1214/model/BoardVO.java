@@ -10,9 +10,8 @@ public class BoardVO {
 	private String boContent;
 	private String boDate;
 	
-	public BoardVO(int boNo, String boTitle, String boContent, String boDate) {
-		super();
-		this.boNo = boNo;
+	public BoardVO(String boTitle, String boContent, MemberVO id) {
+		
 		this.boTitle = boTitle;
 		this.boContent = boContent;
 		Date time = new Date();

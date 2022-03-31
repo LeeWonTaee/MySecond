@@ -83,7 +83,6 @@ public class MemberAndBoardMain {
 						String title = sc.nextLine();
 						System.out.print("글 내용을 입력해주세요 : ");
 						String content = sc.nextLine();
-						
 						int boradCnt = boardService.insertBoard(title, content, mem);
 						if(boradCnt > 0) {
 							System.out.println("글이 작성되었습니다.");

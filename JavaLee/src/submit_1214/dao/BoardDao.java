@@ -66,15 +66,17 @@ public class BoardDao {
 		query.append("		, ?						");
 		query.append("		, ?						");
 		query.append("		, ?						");
-		query.append("		, sysdate				");
+		query.append("		, ?						");
 		query.append("		)						");
 		
 		PreparedStatement ps = conn.prepareStatement(query.toString());
 		int idx = 1;
+		BoardVO temp = new BoardVO(title, content, id);
+		
 		ps.setString(idx++, title);
 		ps.setString(idx++, content);
 		ps.setString(idx++, id.getMemId());
-//		ps.setString(idx++, date.getBoDate());
+		ps.setString(idx++, temp.getBoDate());
 		
 		
 		int cnt = ps.executeUpdate();
@@ -83,6 +85,7 @@ public class BoardDao {
 		
 		return cnt;
 	}
+	
 	
 	// 게시글 조회
 	public BoardVO selectBoard(Connection conn, int no) throws SQLException{
